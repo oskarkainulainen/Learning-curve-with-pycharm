@@ -68,7 +68,7 @@ class BigramLanguageModel(nn.Module):
         # Each token directly reads off the logits for the next token from a lookup table
         self.token_embedding_table = nn.Embedding(vocab_size, vocab_size)
 
-    def foward(self, idx, targets= None):
+    def forward(self, idx, targets= None):
         # idx and targets are bot (B,T) tensor of integers
         logits = self.token_embedding_table(idx)  #(B,T,C)
 
